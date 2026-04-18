@@ -64,3 +64,42 @@ FLIR_YOLO/
     validate_flir.py
     inference_flir.py
     plot_results.py
+
+
+Here's your complete requirements.txt for this project:
+txt# requirements.txt
+# FLIR Thermal Object Detection with YOLOv8
+# Python 3.11.9
+
+# ── Core Computer Vision ──────────────────────────────────────────────
+opencv-contrib-python
+numpy
+matplotlib
+pillow
+scipy
+scikit-image
+
+# ── Deep Learning ─────────────────────────────────────────────────────
+# NOTE: Install PyTorch separately using the command below
+# pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
+ultralytics
+
+# ── Data Handling ─────────────────────────────────────────────────────
+pandas
+tifffile
+pycocotools
+
+Save this as requirements.txt in your project root, then add a note in your README under a new Installation section:
+markdown## Installation
+
+1. Create and activate virtual environment:
+python -m venv venv
+venv\Scripts\activate
+
+2. Install PyTorch with CUDA support:
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
+
+3. Install remaining dependencies:
+pip install -r requirements.txt
+
+PyTorch is kept separate from requirements.txt because the install URL depends on your CUDA version — someone with a different GPU or CPU-only setup would need a different command.
